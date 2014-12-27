@@ -36,6 +36,7 @@ class Tinymce_Advanced {
 	private $all_plugins = array(
 		'advlist',
 		'anchor',
+		'cleaboth',
 		'code',
 		'contextmenu',
 		'emoticons',
@@ -57,7 +58,7 @@ class Tinymce_Advanced {
 		'toolbar_2' => 'formatselect,alignjustify,strikethrough,outdent,indent,pastetext,removeformat,charmap,wp_more,emoticons,forecolor,wp_help',
 		'toolbar_3' => '',
 		'toolbar_4' => '',
-		'plugins'   => 'anchor,code,insertdatetime,nonbreaking,print,searchreplace,table,visualblocks,visualchars,emoticons,advlist',
+		'plugins'   => 'anchor,code,insertdatetime,nonbreaking,print,searchreplace,table,visualblocks,visualchars,emoticons,advlist,cleaboth',
 	);
 
 	private $default_admin_settings = array( 'options' => array() );
@@ -256,6 +257,7 @@ class Tinymce_Advanced {
 			'emoticons' => 'Emoticons',
 			'forecolor' => 'Text color',
 			'backcolor' => 'Background color',
+			'clearboth' => 'Clear both',
 
 			// Layer plugin ?
 		//	'insertlayer' => 'Layer',
@@ -292,6 +294,9 @@ class Tinymce_Advanced {
 
 		if ( in_array( 'nonbreaking', $this->used_buttons, true ) )
 			$plugins[] = 'nonbreaking';
+
+		if ( in_array( 'clearboth', $this->used_buttons, true ) )
+			$plugins[] = 'clearboth';
 
 		if ( in_array( 'emoticons', $this->used_buttons, true ) )
 			$plugins[] = 'emoticons';
